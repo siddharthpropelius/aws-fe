@@ -14,7 +14,7 @@ function App() {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
   const fetchData = async () => {
-    const data = await axios.get("https://test.codesiddharth.tech/users");
+    const data = await axios.get("https://test.codesiddharth.tech/api/users");
     setData(data?.data ?? []);
   };
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   const handleOnAdd = async () => {
-    await axios.post("https://test.codesiddharth.tech/users", input);
+    await axios.post("https://test.codesiddharth.tech/api/users", input);
     setInput({
       firstName: "",
       lastName: "",
